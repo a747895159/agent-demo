@@ -13,3 +13,4 @@ logs
 target
 *.iml
 db
+dependency-reduced-pom.xml

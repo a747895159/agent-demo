@@ -22,7 +22,7 @@ public class AgentInterceptor {
                                      @SuperCall Callable<?> callable, @Morph AgentCallable<?> overrideCallable) throws Exception {
         long start = System.currentTimeMillis();
         if (Objects.nonNull(allArguments)) {
-            log.info("织入的 请求参数：{}", JSONObject.toJSONString(allArguments));
+            log.info("request params：{}", JSONObject.toJSONString(allArguments));
         }
         try {
             Object o = null;
@@ -37,13 +37,13 @@ public class AgentInterceptor {
                 o = callable.call();
             }
             if (Objects.nonNull(o)) {
-                log.info("织入的 返回参数：{}", JSONObject.toJSONString(o));
+                log.info("response content：{}", JSONObject.toJSONString(o));
             } else {
-                log.info("织入的方法无返回数据");
+                log.info("no response content");
             }
             return o;
         } finally {
-            log.info("织入的方法:{},总耗时 ：{}", method.getName(), (System.currentTimeMillis() - start));
+            log.info("method:{},times ：{}", method.getName(), (System.currentTimeMillis() - start));
         }
     }
 }
