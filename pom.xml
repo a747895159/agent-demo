@@ -152,7 +152,19 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.32</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.6.3</version>
+            <scope>test</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>com.yonghui</groupId>
+            <artifactId>captain-bootstrap</artifactId>
+            <version>1.0.6</version>
+            <!--            <scope>test</scope>-->
+        </dependency>
     </dependencies>
 
 </project>
